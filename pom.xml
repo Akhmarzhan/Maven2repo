@@ -12,7 +12,7 @@
     <properties>
 
         <!-- Generic properties -->
-        <java.version>1.7</java.version>
+        <java.home>C:\Program Files\Java\jdk-18.0.1.1\bin\javac</java.home>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -300,6 +300,7 @@
           </plugins>
         </pluginManagement>   
         <plugins>
+		
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -308,12 +309,16 @@
                     <compilerArguments>
                         <Xlint/>
                     </compilerArguments>
-                    <verbose>true</verbose>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+						<verbose>true</verbose>
+						<fork>true</fork>
+						<executable>${java.home}</executable>
+					<compilerVersion>18</compilerVersion>
+                    <source>18</source>
+                    <target>18</target>
                     <showWarnings>true</showWarnings>
                 </configuration>
             </plugin>
+			
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
