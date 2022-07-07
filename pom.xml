@@ -280,7 +280,17 @@
     </dependencies>
 
     <!-- Maven plugin versions are mentioned in order to guarantee the build reproducibility in the long term -->
-    <build>
+     <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <artifactId>maven-resources-plugin</artifactId>
+              <version>2.7</version>
+            </plugin>           
+          </plugins>
+        </pluginManagement>   
+    </build>
+	<build>
         <defaultGoal>install</defaultGoal>
         <testResources>
             <testResource>
